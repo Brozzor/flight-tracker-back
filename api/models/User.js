@@ -14,12 +14,14 @@ module.exports = {
       type: "string",
       required: true,
       minLength: 3,
+      maxLength: 30
     },
 
     lastname: {
       type: "string",
       required: true,
       minLength: 3,
+      maxLength: 30
     },
 
     email: {
@@ -30,25 +32,23 @@ module.exports = {
     },
 
     password: {
-      type: "string",
-      allowNull: true,
+      type: "string"
     },
 
     status: {
         type: "string",
         isIn: ['USER', 'ADMINISTRATOR'],
         defaultsTo: "USER",
-    },
+    }
   
   },
 
-  comparePassword: function (password, user, cb) {
+  comparePassword: function (password, userPassword) {
     let hash = crypto.createHash('sha256').update(password).digest('base64');
-    if (hash === user.password) {
-      cb(null, true);
-    } else {
-      cb(new Error("Password didn't match"));
+    if (hash === userPassword) {
+      return true
     }
+    return false
   },
 
   beforeCreate: function (user, cb) {

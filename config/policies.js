@@ -17,6 +17,14 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  '*': "isAuth",
+
+  "UserController" : {
+    "create": true
+  },
+
+  "AuthController" : {
+    "login": true
+  }
 
 };

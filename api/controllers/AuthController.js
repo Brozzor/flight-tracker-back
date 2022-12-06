@@ -16,7 +16,6 @@ module.exports = {
 
         // Comparaison du mot de passe envoyer par l'utilisateur et le mot de passe crypter en base de donnée
         const isGoodPassword = await User.comparePassword(req.body.password, user.password);
-        console.log(isGoodPassword)
 
         if (!isGoodPassword) return res.sendStatus(401);
 

@@ -25,6 +25,18 @@ module.exports.policies = {
 
   "AuthController" : {
     "login": true
-  }
+  },
+
+  "PlaneController" : {
+    "create": ["isAuth","isAdmin"],
+    "update": ["isAuth","isAdmin"],
+    "delete": ["isAuth","isAdmin"],
+  },
+
+  "PersonalityController" : {
+    "create": ["isAuth","isAdmin"],
+    "update": ["isAuth","isAdmin"],
+    "delete": ["isAuth","isAdmin"],
+  },
 
 };

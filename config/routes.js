@@ -19,11 +19,22 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-   'post /api/v1/auth/login': 'AuthController.login',
+  'post /api/v1/auth/login': 'AuthController.login',
 
-   'post /api/v1/user': 'UserController.create',
-   'get /api/v1/user/me': 'UserController.me',
+  'post /api/v1/user': 'UserController.create',
+  'get /api/v1/user/me': 'UserController.me',
 
+  'post /api/v1/plane': 'PlaneController.create',
+  'put /api/v1/plane/:id': 'PlaneController.update',
+  'delete /api/v1/plane/:id': 'PlaneController.delete',
+  'get /api/v1/plane/:id': 'PlaneController.get',
+  'get /api/v1/plane': 'PlaneController.list',
+
+  'post /api/v1/personality': 'PersonalityController.create',
+  'put /api/v1/personality/:id': 'PersonalityController.update',
+  'delete /api/v1/personality/:id': 'PersonalityController.delete',
+  'get /api/v1/personality/:id': 'PersonalityController.get',
+  'get /api/v1/personality': 'PersonalityController.list',
 
   /***************************************************************************
   *                                                                          *

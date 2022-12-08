@@ -37,7 +37,7 @@ module.exports = {
 
     status: {
         type: "string",
-        isIn: ['USER', 'ADMINISTRATOR'],
+        isIn: ['USER', 'ADMINISTRATOR', 'BANNED'],
         defaultsTo: "USER",
     }
   

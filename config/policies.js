@@ -39,4 +39,10 @@ module.exports.policies = {
     "delete": ["isAuth","isAdmin"],
   },
 
+  "FlightController" : {
+    "create": ["isAuth","isAdmin"],
+    "update": ["isAuth","isAdmin"],
+    "delete": ["isAuth","isAdmin"],
+  },
+
 };

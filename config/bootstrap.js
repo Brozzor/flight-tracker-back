@@ -26,5 +26,11 @@ module.exports.bootstrap = async function() {
   //   // etc.
   // ]);
   // ```
+  const planes = await Plane.find()
+  for (const plane of planes) {
+    await OpenskyService.findAndSaveFlights(plane)
+  }
+  console.log("------ Refreshing flights -------")
+ 
 
 };

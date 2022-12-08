@@ -11,7 +11,7 @@ module.exports = {
 
     duration: {
       type: "number",
-      required: true
+      allowNull: true
     },
 
     plane_id: {
@@ -20,12 +20,23 @@ module.exports = {
 
     from: {
       type: "string",
-      required: true
+      allowNull: true
     },
 
     to: {
       type: "string",
-      required: true
+      allowNull: true
+    },
+
+    firstSeen: {
+      type: "number",
+      allowNull: true
+
+    },
+
+    lastSeen: {
+      type: "number",
+      allowNull: true
     }
 
   },

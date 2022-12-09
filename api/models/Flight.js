@@ -19,13 +19,11 @@ module.exports = {
     },
 
     from: {
-      type: "string",
-      allowNull: true
+      model: "airport"
     },
 
     to: {
-      type: "string",
-      allowNull: true
+      model: "airport"
     },
 
     firstSeen: {

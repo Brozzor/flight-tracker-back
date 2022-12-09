@@ -10,13 +10,12 @@
     attributes: {
   
       iata: {
-        type: "number",
+        type: "string",
         allowNull: true
       },
   
       icao: {
         type: "string",
-        allowNull: true
       },
   
       name: {

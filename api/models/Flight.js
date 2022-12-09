@@ -14,7 +14,7 @@ module.exports = {
       allowNull: true
     },
 
-    plane_id: {
+    plane: {
       model: "plane"
     },
 

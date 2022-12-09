@@ -29,7 +29,7 @@ module.exports = {
       required: true
     },
 
-    personality_id: {
+    personality: {
       model: "personality"
     },
 

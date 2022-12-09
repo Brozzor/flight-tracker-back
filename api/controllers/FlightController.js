@@ -27,13 +27,17 @@ module.exports = {
     },
 
     list: async function (req, res){
-        let flight;
+        let flights;
         try {
-            flight = await Flight.find().skip(req.query.skip || 0).sort('createdAt DESC').limit(10)
+            flights = await Flight.find().skip(req.query.skip || 0).sort('createdAt DESC').populate('from').populate('to').populate('plane').limit(10)
+            for (const i in flights) {
+                flights[i].plane.personality = await Personality.findOne(flights[i].plane.personality)
+            }
         } catch (error) {
+            console.error(error)
             return res.sendStatus(404);
         }
-        return res.send(flight);
+        return res.send(flights);
     },
 
     update: async function (req, res) {

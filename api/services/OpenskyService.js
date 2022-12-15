@@ -42,7 +42,8 @@ module.exports = {
 
     findAndSaveAirport: async function(icao){
         const airport = await Airport.findOne({icao})
-        if (airport || !icao) return airport.id
+        if (!icao) return null
+        if (airport) return airport.id
         let newAirport
         try {
             const { data } = await axios.get(sails.config.opensky.baseUrl + "airports/?icao="+ icao)

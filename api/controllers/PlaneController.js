@@ -9,7 +9,8 @@ module.exports = {
   
     create: async function (req, res){
         try {
-            await Plane.create(req.body)
+           const plane = await Plane.create(req.body).fetch()
+           await OpenskyService.findAndSaveFlights(plane)
         } catch (error) {
             return res.send(error);
         }
@@ -27,13 +28,14 @@ module.exports = {
     },
 
     list: async function (req, res){
-        let plane;
+        let planes;
         try {
-            plane = await Plane.find().skip(req.query.skip || 0).sort('createdAt DESC').limit(10)
+            planes = await Plane.find().skip(req.query.skip || 0).sort('createdAt DESC').limit(10)
+            console.log(plane)
         } catch (error) {
             return res.sendStatus(404);
         }
-        return res.send(plane);
+        return res.send(planes);
     },
 
     update: async function (req, res) {

@@ -43,6 +43,7 @@ module.exports.policies = {
     "create": ["isAuth","isAdmin"],
     "update": ["isAuth","isAdmin"],
     "delete": ["isAuth","isAdmin"],
+    "refreshFlights": "isAuth"
   },
 
 };

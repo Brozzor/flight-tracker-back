@@ -37,6 +37,7 @@ module.exports.routes = {
   'get /api/v1/personality': 'PersonalityController.list',
 
   'post /api/v1/flight': 'FlightController.create',
+  'put /api/v1/flight/refresh': 'FlightController.refreshFlights',
   'put /api/v1/flight/:id': 'FlightController.update',
   'delete /api/v1/flight/:id': 'FlightController.delete',
   'get /api/v1/flight/:id': 'FlightController.get',

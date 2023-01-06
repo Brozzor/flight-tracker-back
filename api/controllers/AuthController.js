@@ -20,7 +20,7 @@ module.exports = {
         if (!isGoodPassword) return res.sendStatus(401);
 
         // creation du token d'authentification et retour au client pour qu'il puisse maintenir une connection a la partie authentifié de l'api
-        return res.send(jwt.sign({ id: user.id }, process.env.JWT_SECRET));
+        return res.send(jwt.sign({ id: user.id, status: user.status }, process.env.JWT_SECRET));
     }
 
 };

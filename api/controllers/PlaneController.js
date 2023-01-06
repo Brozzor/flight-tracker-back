@@ -28,13 +28,10 @@ module.exports = {
     },
 
     list: async function (req, res){
-        let planes;
+        let planes = [];
         try {
-            planes = await Plane.find().skip(req.query.skip || 0).sort('createdAt DESC').limit(10)
-            console.log(plane)
-        } catch (error) {
-            return res.sendStatus(404);
-        }
+            planes = await Plane.find().skip(req.query.skip || 0).populate('personality').sort('createdAt DESC').limit(10)
+        } catch (error) {}
         return res.send(planes);
     },
 
@@ -48,8 +45,10 @@ module.exports = {
     },
 
     delete: async function (req, res) {
+        
         try {
             await Plane.destroyOne(req.params.id)
+            await Flight.destroy({plane: req.params.id})
         } catch (error) {
             return res.send(error);
         }

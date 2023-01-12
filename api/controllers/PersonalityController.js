@@ -48,6 +48,11 @@ module.exports = {
     delete: async function (req, res) {
         try {
             await Personality.destroyOne(req.params.id)
+            const planes = await Plane.find({ personality: req.params.id })
+            for (const plane of planes) {
+                await Flight.destroy({ plane: plane.id })
+            }
+            await Plane.destroy({ personality: req.params.id })
         } catch (error) {
             return res.send(error);
         }

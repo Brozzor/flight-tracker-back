@@ -23,6 +23,7 @@ module.exports.routes = {
 
   'post /api/v1/user': 'UserController.create',
   'get /api/v1/user/me': 'UserController.me',
+  'put /api/v1/user/me': 'UserController.updateMe',
 
   'post /api/v1/plane': 'PlaneController.create',
   'put /api/v1/plane/:id': 'PlaneController.update',

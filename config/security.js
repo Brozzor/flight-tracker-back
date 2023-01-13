@@ -30,7 +30,11 @@ module.exports.security = {
 
    cors: {
      allRoutes: true,
-     allowOrigins: 'http://localhost:3000',
+     allowOrigins: [
+      'https://bft.buisson.us',
+      'http://bft.buisson.us',
+      'https://www.bft.buisson.us',
+    ],
      allowCredentials: true,
      allowRequestHeaders: 'Content-Type, Authorization, Access-Control-Allow-Credential'
    },

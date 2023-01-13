@@ -26,7 +26,12 @@ module.exports.sockets = {
   * > https://sailsjs.com/docs/reference/web-sockets/socket-client           *
   *                                                                          *
   ***************************************************************************/
-
+  onlyAllowOrigins: [
+    'https://bft.buisson.us',
+    'http://bft.buisson.us',
+    'https://www.bft.buisson.us',
+  ],
+  
   // transports: [ 'websocket' ],
 
 
